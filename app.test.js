@@ -24,8 +24,7 @@ VALUES ('Testaurant', 'Test Cuisine', 4.0)`
     );
 });
 describe('Restaurant API', () => {
-    // --- ALL YOUR describe(...) AND it(...) TEST BLOCKS GO
-    HERE-- -
+    // --- ALL YOUR describe(...) AND it(...) TEST BLOCKS GO HERE-- -
         // (Example test)
         it('GET /restaurants --> should return all restaurants',
             async () => {
