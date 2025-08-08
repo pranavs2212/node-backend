@@ -48,7 +48,8 @@ jobs:
 
       - name: Create the database
         run: |
-          PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h localhost -U postgres -c "CREATE DATABASE IF NOT EXISTS restaurants_db;"
+          PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h localhost -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'restaurants_db'" | grep -q 1 || \
+          PGPASSWORD=${{ secrets.POSTGRES_PASSWORD }} psql -h localhost -U postgres -c "CREATE DATABASE restaurants_db;"
 
       - name: Run tests
         run: npm test
